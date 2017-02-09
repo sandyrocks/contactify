@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209134307) do
+ActiveRecord::Schema.define(version: 20170209155334) do
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "primary_email_id"
+    t.string   "secondary_email_id"
+    t.string   "mobile_number"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "twitter_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

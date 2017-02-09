@@ -1,0 +1,10 @@
+= simple_form_for(@contact, html: { class: 'form-horizontal' }) do |form|
+  = form.input :first_name
+  = form.input :last_name
+  = form.input :primary_email_id
+  = form.input :secondary_email_id
+  = form.input :mobile_number
+  = form.input :city
+  = form.input :state
+  = form.input :country, as: :string 
+  = form.submit nil, class: 'btn btn-primary'
