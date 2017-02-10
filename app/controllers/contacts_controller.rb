@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
 
   def new
     @contact = Contact.new
+    @contact.build_photo
   end
 
   def show
@@ -34,7 +35,14 @@ class ContactsController < ApplicationController
 
   private
     def contact_params
-      params.require(:contact).permit!
+      params.require(:contact).permit(:first_name, 
+                                      :last_name,
+                                      :primary_email_id, 
+                                      :secondary_email_id,
+                                      :mobile_number,
+                                      :city, 
+                                      :state, 
+                                      :country, photo_attributes: [:image])
     end
 
     def set_contact
